@@ -6,10 +6,10 @@ import requests
 
 user_agents = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0",
-    # "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
-    # "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.1 Safari/605.1.15"
-    # "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.41",
-    # "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 '
+    'Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.54'
 ]
 
 headers = {
@@ -21,10 +21,11 @@ headers = {
     "Host": "www.amazon.com",
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "cross-site",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
     "TE": "trailers",
     "Upgrade-Insecure-Requests": "1",
-    "User-Agent": random.choice(user_agents),
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/114.0"
 }
 
 http_proxy = "http://kayjitsu:auMYDwfm8Su4K0ph@proxy.packetstream.io:31112"

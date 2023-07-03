@@ -19,12 +19,17 @@ def generate_request_urls(asins_list: list):
         soup = request.get_soup(response) if response else None
 
         if soup:
-            review_count_block = soup.find_all("div", attrs={"data-hook": "cr-filter-info-review-rating-count"})
-            review_count = get_number_from_string(review_count_block[0].text)
-            page_count = review_count // 10
+            try:
+                review_count_block = soup.find_all("div", attrs={"data-hook": "cr-filter-info-review-rating-count"})
+                review_count = get_number_from_string(review_count_block[0].text)
+                page_count = review_count // 10
 
-            request_urls.extend(get_urls(asin, page_count))
-            print("added urls for asin", asin, "page_count", page_count)
+                request_urls.extend(get_urls(asin, page_count))
+                print("added urls for asin", asin, "page_count", page_count)
+            except:
+                asins_list.append(asin)
+                print("no soup for url gather")
+
         else:
             asins_list.append(asin)
             print("no soup for url gather")

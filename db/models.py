@@ -16,3 +16,13 @@ class Ingest(BaseModel):
     content = TextField()
     url = TextField()
     created_at = DateTimeField(default=datetime.now())
+
+
+class Review(BaseModel):
+    id = PrimaryKeyField()
+    review_id = TextField()
+    star_rating = IntegerField()
+    user = TextField()
+    title = TextField()
+    content = TextField()
+    rating = IntegerField()
