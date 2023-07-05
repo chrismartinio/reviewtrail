@@ -15,7 +15,7 @@ def get_all_reviews(urls):
 
     results = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
         futures = [executor.submit(get_page, url) for url in urls]
         for future in concurrent.futures.as_completed(futures):
             result = future.result()
